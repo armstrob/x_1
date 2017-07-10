@@ -10,7 +10,6 @@
             </intent-filter>
         </activity>
         <activity android:configChanges="orientation|keyboardHidden" android:name="com.manateeworks.ScannerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <meta-data android:name="MW_LICENSE_KEY" android:value="+/YRhrW8FSNAkzbNUGHOrAeyhRoMviFm2iq3WxGXgqI=" />
     </application>
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="25" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
