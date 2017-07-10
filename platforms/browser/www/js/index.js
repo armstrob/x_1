@@ -52,7 +52,7 @@ var app = {
                 { "method": 'MWBenableFlash', 'value': [true] }, //possible setting
                 { "method": 'MWBuse60fps', 'value': [true] }, //possible
                 { "method": "MWBsetScanningRect", "value": [mw_c.MWB_CODE_MASK_DM, 20, 2, 60, 96] },
-                { "method": 'MWBsetDirection', "value": [MWB_SCANDIRECTION_OMNI] }
+                { "method": 'MWBsetDirection', "value": [mw_c.MWB_SCANDIRECTION_OMNI] }
             ];
 
         mwbScanner.loadSettings(settings).then(function (response) {
