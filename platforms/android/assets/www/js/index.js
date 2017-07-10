@@ -35,12 +35,31 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-                alert('before set key');
+        alert('before set key');
         mwbScanner.setKey('+/YRhrW8FSNAkzbNUGHOrAeyhRoMviFm2iq3WxGXgqI=').then(function (response) {
-                alert('incode set key');            
-            //response of the setKey action
+            // inside set key  comment for now
         });
         alert('ready for action');
+        var mw_c = mwbScanner.getConstants()
+            , settings = [
+                { 'method': 'MWBsetActiveCodes', 'value': [mw_c.MWB_CODE_MASK_DM] },
+                { "method": 'MWBenableZoom', "value": [true] },
+                { "method": 'MWBsetZoomLevels', "value": [200, 400, 1] },
+                // {"method" : 'MWBsetInterfaceOrientation', "value" : [mw_c.OrientationLandscapeLeft]},
+                { "method": 'MWBsetOverlayMode', "value": [mw_c.OverlayModeImage] },
+                { "method": 'MWBsetLevel', "value": [3] }, //3 will try to scan harder than the default which is 2
+                { "method": 'MWBenableHiRes', 'value': [true] }, //possible setting
+                { "method": 'MWBenableFlash', 'value': [true] }, //possible setting
+                { "method": 'MWBuse60fps', 'value': [true] }, //possible
+                { "method": "MWBsetScanningRect", "value": [mw_c.MWB_CODE_MASK_DM, 20, 2, 60, 96] },
+                { "method": 'MWBsetDirection', "value": [MWB_SCANDIRECTION_OMNI] }
+            ];
+
+        mwbScanner.loadSettings(settings).then(function (response) {
+            alert('done with settings');
+        }).catch(function (reason) {
+            alert('error in settings');
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
