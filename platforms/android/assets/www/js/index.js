@@ -43,7 +43,7 @@ var app = {
         alert('ready for action');
         var mw_c = mwbScanner.getConstants(), settings;
             settings = [
-                { 'method': 'MWBsetActiveCodes', 'value': [mw_c.MWB_CODE_MASK_DM] },
+                { 'method': 'MWBsetActiveCodes', 'value': [mw_c.MWB_CODE_MASK_PDF] },
                 { "method": 'MWBenableZoom', "value": [true] },
                 { "method": 'MWBsetZoomLevels', "value": [200, 400, 1] },
                 // {"method" : 'MWBsetInterfaceOrientation', "value" : [mw_c.OrientationLandscapeLeft]},
