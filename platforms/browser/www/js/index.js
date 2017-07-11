@@ -37,11 +37,12 @@ var app = {
         app.receivedEvent('deviceready');
         alert('before set key');
         mwbScanner.setKey('+/YRhrW8FSNAkzbNUGHOrAeyhRoMviFm2iq3WxGXgqI=').then(function (response) {
+             alert('valid key');
             // inside set key  comment for now
         });
         alert('ready for action');
-        var mw_c = mwbScanner.getConstants()
-            , settings = [
+        var mw_c = mwbScanner.getConstants(), settings;
+            settings = [
                 { 'method': 'MWBsetActiveCodes', 'value': [mw_c.MWB_CODE_MASK_DM] },
                 { "method": 'MWBenableZoom', "value": [true] },
                 { "method": 'MWBsetZoomLevels', "value": [200, 400, 1] },
